@@ -57,3 +57,41 @@
 
 </body>
 </html>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID",
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+</script>
+<input type="email" id="email">
+<input type="password" id="password">
+<button onclick="register()">Register</button>
+
+<script>
+function register() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(() => alert("Account Created"))
+    .catch(err => alert(err.message));
+}
+</script>
+db.collection("players").add({
+  name: "Player Name",
+  uid: auth.currentUser.uid,
+  tournament: "Toxic Hunters"
+});
+db.collection("leaderboard").add({
+  player: "Player Name",
+  points: 10
+});
