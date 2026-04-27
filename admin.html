@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #020617;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: orange;
+}
+
+iframe {
+    width: 95%;
+    height: 500px;
+    border-radius: 10px;
+    border: none;
+}
+
+.login {
+    margin-top: 100px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginBox">
+    <h1>Admin Login</h1>
+    <input type="password" id="pass" placeholder="Enter Password">
+    <br>
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="panel" style="display:none;">
+    <h1>📊 Player List</h1>
+
+    <!-- এখানে Google Sheet publish link বসাও -->
+    <iframe src="YOUR_GOOGLE_SHEET_LINK"></iframe>
+</div>
+
+<script>
+function login() {
+    var p = document.getElementById("pass").value;
+
+    if(p === "admin123") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("panel").style.display = "block";
+    } else {
+        alert("Wrong password!");
+    }
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #020617;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: orange;
+}
+
+iframe {
+    width: 95%;
+    height: 500px;
+    border-radius: 10px;
+    border: none;
+}
+
+.login {
+    margin-top: 100px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="loginBox">
+    <h1>Admin Login</h1>
+    <input type="password" id="pass" placeholder="Enter Password">
+    <br>
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="panel" style="display:none;">
+    <h1>📊 Player List</h1>
+
+    <!-- এখানে Google Sheet publish link বসাও -->
+    <iframe src="YOUR_GOOGLE_SHEET_LINK"></iframe>
+</div>
+
+<script>
+function login() {
+    var p = document.getElementById("pass").value;
+
+    if(p === "admin123") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("panel").style.display = "block";
+    } else {
+        alert("Wrong password!");
+    }
+}
+</script>
+
+</body>
+</html>
